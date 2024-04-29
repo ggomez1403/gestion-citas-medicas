@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "e7e2",
+      "idNumber": "1013032965",
+      "firstName": "Geraldine",
+      "lastName": "Gomez ",
+      "phoneNumber": "3193108099",
+      "email": "geralgomez1403@gmail.com",
+      "password": "U2FsdGVkX1/D6YxQVgkakrTbLh53v+UhWuXkiMy76hg=",
+      "role": "USER"
+    }
+  ]
+}

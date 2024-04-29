@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e7e3;
+}
+
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+  color: #4a69e2;
+  text-transform: uppercase;
+}
+
+.login {
+  padding: 2rem;
+  width: 800px;
+  background-color: #fafafa;
+  border-radius: 1rem;
+}
+
+p {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #000;
+  font-size: 1rem;
+}
+
+img {
+  width: 670px;
+  margin: 2rem 0 4rem;
+  border-radius: 1rem;
+  order: 1;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fafafa;
+  background-color: #232321;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+}
+
+.account {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 1rem;
+}
+
+.account a {
+  color: #4a69e2;
+  font-weight: bold;
+}
