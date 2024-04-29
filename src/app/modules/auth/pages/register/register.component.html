@@ -1,0 +1,121 @@
+<section class="container">
+  <img src="https://i.imgur.com/L7jtAXM.jpg" alt="register img" />
+  <article class="register">
+    <h1>Registro de usuario</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <p>Detalles de usuario</p>
+
+      <input
+        type="text"
+        placeholder="Numero de documento"
+        formControlName="idNumber"
+      />
+
+      <div
+        *ngIf="idNumber?.touched && idNumber?.errors?.['required']"
+        class="danger"
+      >
+        Numero de documento es requerido
+      </div>
+
+      <input type="text" placeholder="Nombre" formControlName="firstName" />
+
+      <div
+        *ngIf="firstName?.touched && firstName?.errors?.['required']"
+        class="danger"
+      >
+        Nombre es requerido
+      </div>
+
+      <div
+        *ngIf="firstName?.touched && firstName?.errors?.['minlength']"
+        class="danger"
+      >
+        Nombre debe tener mas de
+        {{ firstName?.errors?.['minlength']?.requiredLength }} caracteres
+      </div>
+
+      <input type="text" placeholder="Apellido" formControlName="lastName" />
+
+      <div
+        *ngIf="lastName?.touched && lastName?.errors?.['required']"
+        class="danger"
+      >
+        Apellido es requerido
+      </div>
+
+      <div
+        *ngIf="lastName?.touched && lastName?.errors?.['minlength']"
+        class="danger"
+      >
+        Apellido debe tener mas de
+        {{ lastName?.errors?.['minlength']?.requiredLength }} caracteres
+      </div>
+
+      <input
+        type="text"
+        placeholder="Numero de telefono"
+        formControlName="phoneNumber"
+        (input)="onPhoneNumberInput($event)"
+      />
+
+      <div
+        *ngIf="phoneNumber?.touched && phoneNumber?.errors?.['required']"
+        class="danger"
+      >
+        Numero de telefono es requerido
+      </div>
+
+      <div
+        *ngIf="phoneNumber?.touched && phoneNumber?.errors?.['invalidPhoneNumber']"
+        class="danger"
+      >
+        Numero de telefono debe tener 10 caracteres
+      </div>
+
+      <p>Detalles de inicio de sesion</p>
+      <input type="email" placeholder="Email" formControlName="email" />
+
+      <div *ngIf="email?.touched && email?.errors?.['required']" class="danger">
+        Correo electronico es requerido
+      </div>
+
+      <div *ngIf="email?.touched && email?.errors?.['email']" class="danger">
+        Por favor ingrese una direccion de correo valida
+      </div>
+
+      <input
+        type="password"
+        placeholder="Contraseña"
+        formControlName="password"
+      />
+
+      <div
+        *ngIf="password?.touched && password?.errors?.['required']"
+        class="danger"
+      >
+        Contraseña es requerida
+      </div>
+
+      <div
+        *ngIf="password?.touched && password?.errors?.['minlength']"
+        class="danger"
+      >
+        Contraseña debe tener mas de
+        {{ password?.errors?.['minlength']?.requiredLength }} caracteres
+      </div>
+
+      <div *ngIf="errorSession" class="danger">
+        El correo ya se encuentra registrado
+      </div>
+
+      <button class="btn" [disabled]="!registerForm.valid">
+        Registrarme
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </form>
+    <p class="account">
+      ¿Ya tienes una cuenta? <a routerLink="/auth/login">Inicia Sesion</a>
+    </p>
+  </article>
+</section>

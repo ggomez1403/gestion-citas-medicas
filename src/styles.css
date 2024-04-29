@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input {
+  font-family: "Rubik", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #232321;
+}
+
+.purple {
+  color: #4a69e2;
+}
+
+.yellow {
+  color: #ffa52f;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.danger {
+  background-color: #f6ccd0;
+  color: #76303b;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.template {
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 120px);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

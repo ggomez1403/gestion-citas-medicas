@@ -1,0 +1,51 @@
+<section class="container">
+  <img src="https://i.imgur.com/oaE18NX.jpg" alt="login img" />
+  <article class="login">
+    <h1>Inicio de sesion</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <p>Bienvenido de vuelta!</p>
+      <input type="email" placeholder="Email" formControlName="email" />
+
+      <div *ngIf="email?.touched && email?.errors?.['required']" class="danger">
+        Correo electronico es requerido
+      </div>
+
+      <div *ngIf="email?.touched && email?.errors?.['email']" class="danger">
+        Por favor ingrese una direccion de correo valida
+      </div>
+
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+
+      <div
+        *ngIf="password?.touched && password?.errors?.['required']"
+        class="danger"
+      >
+        Contraseña es requerida
+      </div>
+
+      <div
+        *ngIf="password?.touched && password?.errors?.['minlength']"
+        class="danger"
+      >
+        Contraseña debe tener mas de
+        {{ password?.errors?.['minlength']?.requiredLength }} caracteres
+      </div>
+
+      <div *ngIf="errorSession" class="danger">
+        Error en el inicio de sesion
+      </div>
+
+      <button class="btn" [disabled]="!loginForm.valid">
+        Login
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </form>
+    <p class="account">
+      ¿No tienes una cuenta? <a routerLink="/auth/register">Registrate</a>
+    </p>
+  </article>
+</section>

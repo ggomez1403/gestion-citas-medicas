@@ -1,0 +1,41 @@
+header {
+  margin: 1.5rem 6rem;
+  font-family: "Rubik", sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: #795fec;
+  font-size: 1.5rem;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 0.5rem 1.7rem;
+  border: transparent;
+  color: #fafafa;
+}
+
+.login {
+  background-color: #795fec;
+}
+
+.logout {
+  background-color: #d30101;
+}
