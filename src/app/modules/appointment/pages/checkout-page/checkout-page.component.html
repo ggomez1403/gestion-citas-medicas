@@ -1,0 +1,208 @@
+<ng-template #noAppointment>
+  <section class="template">
+    <h1>No hay ningun horario seleccionado</h1>
+  </section>
+</ng-template>
+
+<section class="container" *ngIf="appointment !== null; else noAppointment">
+  <h1>Pasarela de pagos</h1>
+  <section class="checkout">
+    <article class="checkout-details">
+      <section class="info-container">
+        <h2><i class="fa-solid fa-user"></i>Datos del paciente</h2>
+        <div class="divider"></div>
+        <div class="contact-details">
+          <ul>
+            <li><span>Nombre: </span>{{ currentUser.firstName }}</li>
+            <li><span>Apellido: </span>{{ currentUser.lastName }}</li>
+            <li><span>Email: </span>{{ currentUser.email }}</li>
+            <li>
+              <span>Numero de telefono: </span>{{ currentUser.phoneNumber }}
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="info-container">
+        <h2><i class="fa-solid fa-user-doctor"></i>Datos de la cita</h2>
+        <div class="divider"></div>
+        <div class="contact-details">
+          <ul>
+            <li><span>Dia: </span>{{ appointment.scheduleItem.day }}</li>
+            <li><span>Hora: </span>{{ appointment.scheduleItem.time }}</li>
+            <li><span>Doctor: </span>{{ doctor.name }}</li>
+            <li><span>Contacto del doctor: </span>{{ doctor.email }}</li>
+          </ul>
+        </div>
+      </section>
+      <section class="info-container">
+        <h2><i class="fa-solid fa-cart-shopping"></i>Pago</h2>
+        <div class="divider"></div>
+        <form [formGroup]="checkoutForm">
+          <label for="name">Nombre de la tarjeta</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Ej. John Doe"
+            formControlName="name"
+          />
+
+          <div
+            *ngIf="name?.touched && name?.errors?.['required']"
+            class="danger"
+          >
+            El nombre de la tarjeta es requerido
+          </div>
+
+          <div
+            *ngIf="name?.touched && name?.errors?.['minlength']"
+            class="danger"
+          >
+            El nombre de la tarjeta debe tener mas de
+            {{ name?.errors?.['minlength']?.requiredLength }} caracteres
+          </div>
+
+          <label for="card-num">Numero de la tarjeta</label>
+          <input
+            id="card-num"
+            type="text"
+            placeholder="Ex. 1234567890"
+            formControlName="cardNumber"
+            (input)="onNumberInput($event)"
+          />
+
+          <div
+            *ngIf="cardNumber?.touched && cardNumber?.errors?.['required']"
+            class="danger"
+          >
+            Numero de tarjeta es requerido
+          </div>
+
+          <div
+            *ngIf="cardNumber?.touched && cardNumber?.errors?.['invalidCardNumber']"
+            class="danger"
+          >
+            El numero de la tarjeta debe tener 15 numeros
+          </div>
+
+          <div class="exp-cvc-container">
+            <div class="mini-form">
+              <label for="expiration">Expiracion</label>
+              <div class="short-input">
+                <input
+                  id="expiration"
+                  type="text"
+                  placeholder="Ej. 11"
+                  formControlName="expirationMonth"
+                  (input)="onNumberInput($event)"
+                />
+                <span>/</span>
+                <input
+                  type="text"
+                  placeholder="Ej. 29"
+                  formControlName="expirationYear"
+                  (input)="onNumberInput($event)"
+                />
+              </div>
+            </div>
+
+            <div class="mini-form">
+              <label for="cvc">CVC</label>
+              <div class="short-input">
+                <input
+                  id="cvc"
+                  type="text"
+                  placeholder="Ej. 193"
+                  formControlName="cvc"
+                  (input)="onNumberInput($event)"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            *ngIf="expirationMonth?.touched && expirationMonth?.errors?.['required']"
+            class="danger"
+          >
+            Mes de expiracion es requerido
+          </div>
+
+          <div
+            *ngIf="expirationMonth?.touched && expirationMonth?.errors?.['invalidExpNumber']"
+            class="danger"
+          >
+            Mes de expiracion debe tener dos numeros
+          </div>
+
+          <div
+            *ngIf="expirationMonth?.touched && expirationMonth?.errors?.['min'] || expirationMonth?.errors?.['max']"
+            class="danger"
+          >
+            Mes de expiracion debe estar entre 1 y 12
+          </div>
+
+          <div
+            *ngIf="expirationYear?.touched && expirationYear?.errors?.['required']"
+            class="danger"
+          >
+            Año de expiracion es requerido
+          </div>
+
+          <div
+            *ngIf="expirationYear?.touched && expirationYear?.errors?.['invalidExpNumber']"
+            class="danger"
+          >
+            Año de expiracion debe tener dos numeros
+          </div>
+
+          <div
+            *ngIf="expirationYear?.touched && expirationYear?.errors?.['min']"
+            class="danger"
+          >
+            Año de expiracion debe ser mayor o igual a 24
+          </div>
+
+          <div *ngIf="cvc?.touched && cvc?.errors?.['required']" class="danger">
+            Numero CVC es requerido
+          </div>
+
+          <div
+            *ngIf="cvc?.touched && cvc?.errors?.['invalidCVCNumber']"
+            class="danger"
+          >
+            Numero CVC debe tener 3 numeros
+          </div>
+        </form>
+      </section>
+      <button
+        type="button"
+        class="btn"
+        [disabled]="!checkoutForm.valid"
+        (click)="checkOut()"
+      >
+        Pagar
+      </button>
+    </article>
+    <article class="summary-container">
+      <h2><i class="fa-solid fa-bag-shopping"></i>Resumen del pago</h2>
+      <section class="summary">
+        <div class="row">
+          <p>Cita</p>
+          <p>{{ appointment.price | currency : "USD" }}</p>
+        </div>
+        <div class="row">
+          <p>Envios</p>
+          <p>$0</p>
+        </div>
+        <div class="row">
+          <p>Impuestos</p>
+          <p>$1900</p>
+        </div>
+        <div class="divider"></div>
+        <div class="row bold">
+          <p>Total</p>
+          <p>{{ appointment.price + 1900 | currency : "USD" }}</p>
+        </div>
+      </section>
+    </article>
+  </section>
+</section>

@@ -10,5 +10,177 @@
       "password": "U2FsdGVkX1/D6YxQVgkakrTbLh53v+UhWuXkiMy76hg=",
       "role": "USER"
     }
+  ],
+  "specialties": [
+    {
+      "id": "1",
+      "name": "Pediatría",
+      "image": "https://i.imgur.com/VLZ9HE0.jpg",
+      "description": "Especialidad médica centrada en la atención de la salud de los niños, desde el nacimiento hasta la adolescencia."
+    },
+    {
+      "id": "2",
+      "name": "Ginecología",
+      "image": "https://i.imgur.com/lq8pEeD.jpg",
+      "description": " Especialidad médica enfocada en la salud del sistema reproductivo femenino."
+    },
+    {
+      "id": "3",
+      "name": "Cardiología",
+      "image": "https://i.imgur.com/RPL6Vn9.jpg",
+      "description": "Especialidad médica dedicada al estudio, diagnóstico y tratamiento de enfermedades relacionadas con el corazón."
+    },
+    {
+      "id": "4",
+      "name": "Dermatología",
+      "image": "https://i.imgur.com/0Ig8tQ3.jpg",
+      "description": "Especialidad médica que se ocupa de la salud de la piel, cabello, y uñas."
+    },
+    {
+      "id": "5",
+      "name": "Oftalmología",
+      "image": "https://i.imgur.com/CylCdnK.jpg",
+      "description": "Especialidad médica centrada en el diagnóstico y tratamiento de trastornos oculares y problemas de la vista."
+    },
+    {
+      "id": "6",
+      "name": "Ortopedia",
+      "image": "https://i.imgur.com/tQn4Qw9.jpg",
+      "description": "Especialidad médica que se encarga del diagnóstico, tratamiento y prevención de lesiones y trastornos del sistema musculoesquelético. "
+    },
+    {
+      "id": "7",
+      "name": "Neurología",
+      "image": "https://i.imgur.com/U0J5te0.jpg",
+      "description": "Especialidad médica que se enfoca en el diagnóstico y tratamiento de trastornos del sistema nervioso."
+    },
+    {
+      "id": "8",
+      "name": "Endocrinología",
+      "image": "https://i.imgur.com/VzapGBS.jpg",
+      "description": "Especialidad médica dedicada al estudio de las glándulas endocrinas y sus trastornos."
+    }
+  ],
+  "doctors": [
+    {
+      "id": "1",
+      "name": "Dr. Juan Pérez",
+      "specialtyId": "1",
+      "phoneNumber": "1234567890",
+      "email": "juanperez@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Dra. María García",
+      "specialtyId": "2",
+      "phoneNumber": "0987654321",
+      "email": "mariagarcia@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Dr. Carlos López",
+      "specialtyId": "3",
+      "phoneNumber": "5678901234",
+      "email": "carloslopez@example.com"
+    }
+  ],
+  "availability": [
+    {
+      "doctorId": "1",
+      "schedule": [
+        {
+          "day": "Monday",
+          "time": "09:00 AM"
+        },
+        {
+          "day": "Monday",
+          "time": "10:00 AM"
+        },
+        {
+          "day": "Monday",
+          "time": "11:00 AM"
+        }
+      ]
+    },
+    {
+      "doctorId": "1",
+      "schedule": [
+        {
+          "day": "Tuesday",
+          "time": "02:00 PM"
+        },
+        {
+          "day": "Tuesday",
+          "time": "03:00 PM"
+        },
+        {
+          "day": "Tuesday",
+          "time": "04:00 PM"
+        }
+      ]
+    },
+    {
+      "doctorId": "2",
+      "schedule": [
+        {
+          "day": "Wednesday",
+          "time": "10:00 AM"
+        },
+        {
+          "day": "Wednesday",
+          "time": "11:00 AM"
+        },
+        {
+          "day": "Wednesday",
+          "time": "12:00 PM"
+        }
+      ]
+    },
+    {
+      "doctorId": "2",
+      "schedule": [
+        {
+          "day": "Thursday",
+          "time": "03:00 PM"
+        },
+        {
+          "day": "Thursday",
+          "time": "04:00 PM"
+        },
+        {
+          "day": "Thursday",
+          "time": "05:00 PM"
+        }
+      ]
+    },
+    {
+      "doctorId": "3",
+      "schedule": [
+        {
+          "day": "Friday",
+          "time": "08:00 AM"
+        },
+        {
+          "day": "Friday",
+          "time": "09:00 AM"
+        },
+        {
+          "day": "Friday",
+          "time": "10:00 AM"
+        }
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "id": "f323",
+      "userId": "e7e2",
+      "doctorId": "1",
+      "scheduleItem": {
+        "day": "Tuesday",
+        "time": "03:00 PM"
+      },
+      "price": 11900
+    }
   ]
 }

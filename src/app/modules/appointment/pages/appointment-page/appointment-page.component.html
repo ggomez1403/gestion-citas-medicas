@@ -1,1 +1,20 @@
-<p>appointment-page works!</p>
+<section class="container">
+  <h1>agendar cita medica</h1>
+  <h2>Seleccionar especialidad</h2>
+  <div class="specialities">
+    <article class="speciality" *ngFor="let item of specialities">
+      <img src="{{ item.image }}" alt="" />
+      <div class="speciality-info">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      <button
+        type="button"
+        class="btn"
+        routerLink="/appointment/speciality/{{ item.id }}"
+      >
+        Seleccionar
+      </button>
+    </article>
+  </div>
+</section>

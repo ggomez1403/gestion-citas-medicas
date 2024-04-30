@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #e7e7e3;
+  font-family: "Rubik";
+  padding: 3rem 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #795fec;
+  font-size: 3.5rem;
+}
+
+h2 {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+.speciality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #fafafa;
+  width: 400px;
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Rubik";
+}
+
+li {
+  display: grid;
+  grid-template-columns: repeat(3, 230px);
+  gap: 2rem;
+}
+
+img {
+  width: 300px;
+}
+
+.btn {
+  margin: 1rem;
+  font-size: 1rem;
+  background-color: #cdc2ff;
+}
+
+.doctors h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
