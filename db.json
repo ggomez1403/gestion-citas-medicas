@@ -173,14 +173,176 @@
   ],
   "appointments": [
     {
-      "id": "f323",
+      "id": "42ef",
       "userId": "e7e2",
       "doctorId": "1",
       "scheduleItem": {
-        "day": "Tuesday",
-        "time": "03:00 PM"
+        "day": "Monday",
+        "time": "11:00 AM"
       },
+      "specialityId": "1",
+      "specialityName": "Pediatría",
       "price": 11900
+    },
+    {
+      "id": "bf7e",
+      "userId": "e7e2",
+      "doctorId": "2",
+      "scheduleItem": {
+        "day": "Wednesday",
+        "time": "12:00 PM"
+      },
+      "specialityId": "2",
+      "specialityName": "Ginecología",
+      "price": 11900
+    }
+  ],
+  "procedures": [
+    {
+      "id": "9",
+      "name": "Vacunación pediátrica",
+      "specialtyId": "1",
+      "description": "Vacunación recomendada para niños según el calendario de vacunación."
+    },
+    {
+      "id": "10",
+      "name": "Cirugía pediátrica",
+      "specialtyId": "1",
+      "description": "Procedimiento quirúrgico realizado en niños para tratar diversas condiciones médicas."
+    },
+    {
+      "id": "11",
+      "name": "Control prenatal",
+      "specialtyId": "2",
+      "description": "Evaluación médica regular durante el embarazo para garantizar la salud materna y fetal."
+    },
+    {
+      "id": "12",
+      "name": "Histeroscopia",
+      "specialtyId": "2",
+      "description": "Procedimiento para examinar el útero utilizando un dispositivo delgado y con luz llamado histeroscopio."
+    },
+    {
+      "id": "13",
+      "name": "Cateterismo cardíaco",
+      "specialtyId": "3",
+      "description": "Procedimiento para evaluar el funcionamiento del corazón y los vasos sanguíneos mediante la inserción de un catéter."
+    },
+    {
+      "id": "14",
+      "name": "Implantación de marcapasos",
+      "specialtyId": "3",
+      "description": "Cirugía para implantar un dispositivo eléctrico que ayuda a regular los latidos del corazón."
+    },
+    {
+      "id": "15",
+      "name": "Crioterapia dermatológica",
+      "specialtyId": "4",
+      "description": "Tratamiento dermatológico que utiliza frío extremo para destruir tejido anormal o enfermo."
+    },
+    {
+      "id": "16",
+      "name": "Cirugía dermatológica reconstructiva",
+      "specialtyId": "4",
+      "description": "Procedimiento quirúrgico para reconstruir la piel después de lesiones o cirugías extensas."
+    },
+    {
+      "id": "17",
+      "name": "Cirugía de cataratas",
+      "specialtyId": "5",
+      "description": "Procedimiento quirúrgico para extraer el cristalino opaco y reemplazarlo con una lente artificial."
+    },
+    {
+      "id": "18",
+      "name": "Corrección de estrabismo",
+      "specialtyId": "5",
+      "description": "Procedimiento para corregir la desalineación de los ojos y mejorar la visión."
+    },
+    {
+      "id": "19",
+      "name": "Artroscopia",
+      "specialtyId": "6",
+      "description": "Procedimiento quirúrgico mínimamente invasivo utilizado para diagnosticar y tratar problemas en las articulaciones."
+    },
+    {
+      "id": "20",
+      "name": "Cirugía de columna vertebral",
+      "specialtyId": "6",
+      "description": "Procedimiento quirúrgico para tratar afecciones de la columna vertebral, como hernias de disco o escoliosis."
+    },
+    {
+      "id": "21",
+      "name": "Electroencefalografía de rutina",
+      "specialtyId": "7",
+      "description": "Registro de la actividad eléctrica del cerebro mediante la colocación de electrodos en el cuero cabelludo."
+    },
+    {
+      "id": "22",
+      "name": "Imágenes por resonancia magnética cerebral",
+      "specialtyId": "7",
+      "description": "Técnica de imagenología utilizada para evaluar el cerebro y las estructuras circundantes."
+    },
+    {
+      "id": "23",
+      "name": "Prueba de tolerancia a la glucosa",
+      "specialtyId": "8",
+      "description": "Examen para evaluar la capacidad del cuerpo para procesar la glucosa y diagnosticar la diabetes."
+    },
+    {
+      "id": "24",
+      "name": "Evaluación de tiroides mediante ecografía",
+      "specialtyId": "8",
+      "description": "Prueba de diagnóstico por imágenes para evaluar el tamaño y la función de la glándula tiroides."
+    }
+  ],
+  "medications": [
+    {
+      "id": "9",
+      "name": "Ibuprofeno pediátrico",
+      "description": "Analgésico y antiinflamatorio no esteroideo recomendado para niños.",
+      "specialtyId": "1"
+    },
+    {
+      "id": "10",
+      "name": "Dipirona",
+      "description": "Analgésico y antipirético utilizado para tratar el dolor y la fiebre en niños y adultos.",
+      "specialtyId": "1"
+    },
+    {
+      "id": "11",
+      "name": "Metformina",
+      "description": "Medicamento oral para el tratamiento de la diabetes tipo 2.",
+      "specialtyId": "2"
+    },
+    {
+      "id": "12",
+      "name": "Anticonceptivos orales combinados",
+      "description": "Medicamentos hormonales utilizados para prevenir el embarazo.",
+      "specialtyId": "2"
+    },
+    {
+      "id": "13",
+      "name": "Aspirina",
+      "description": "Antiinflamatorio no esteroideo y antiplaquetario utilizado para tratar el dolor y prevenir los coágulos sanguíneos.",
+      "specialtyId": "3"
+    },
+    {
+      "id": "14",
+      "name": "Nitroglicerina",
+      "description": "Medicamento vasodilatador utilizado para aliviar el dolor de pecho causado por la angina de pecho.",
+      "specialtyId": "3"
+    },
+    {
+      "id": "15",
+      "name": "Corticosteroides tópicos",
+      "description": "Medicamentos antiinflamatorios utilizados para tratar afecciones de la piel como eczema y psoriasis.",
+      "specialtyId": "4"
+    },
+    {
+      "id": "16",
+      "name": "Antifúngicos tópicos",
+      "description": "Medicamentos utilizados para tratar infecciones fúngicas de la piel como el pie de atleta.",
+      "specialtyId": "4"
     }
   ]
 }

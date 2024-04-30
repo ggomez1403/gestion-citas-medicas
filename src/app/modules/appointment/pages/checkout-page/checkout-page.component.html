@@ -25,7 +25,7 @@
       <section class="info-container">
         <h2><i class="fa-solid fa-user-doctor"></i>Datos de la cita</h2>
         <div class="divider"></div>
-        <div class="contact-details">
+        <div class="contact-details" *ngIf="doctor">
           <ul>
             <li><span>Dia: </span>{{ appointment.scheduleItem.day }}</li>
             <li><span>Hora: </span>{{ appointment.scheduleItem.time }}</li>

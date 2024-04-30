@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 6rem 4rem;
+  gap: 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  color: #402aa2;
+  margin-bottom: 1.5rem;
+}

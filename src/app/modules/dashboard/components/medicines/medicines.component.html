@@ -1,0 +1,16 @@
+<section class="container">
+  <h2>Medicamentos disponibles para la cita</h2>
+  <div *ngIf="medicines.length > 0">
+    <ul class="medicines">
+      <li class="medicine" *ngFor="let medicine of medicines">
+        <p class="title">{{ medicine.name }}</p>
+        <p>
+          Descripcion: <span>{{ medicine.description }}</span>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="medicines.length === 0">
+    <p>No hay procedimientos médicos disponibles para mostrar.</p>
+  </div>
+</section>

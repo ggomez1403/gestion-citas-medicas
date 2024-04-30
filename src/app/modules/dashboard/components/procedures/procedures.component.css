@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Rubik";
+}
+
+.procedures {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  gap: 2rem;
+  justify-content: center;
+}
+
+.procedure {
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #e7e7e3;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #795fec;
+}
+
+span {
+  color: #000;
+  font-weight: normal;
+}
+
+p {
+  font-weight: bold;
+  color: #795fec;
+}

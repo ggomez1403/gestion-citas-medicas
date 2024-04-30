@@ -46,6 +46,18 @@ export class AppointmentService {
       .pipe(map((response: any) => response));
   }
 
+  getAppointmentByUser(id: string): Observable<Appointment[]> {
+    return this.http
+      .get(`${this.apiUrl}/appointments?userId=${id}`)
+      .pipe(map((response: any) => response));
+  }
+
+  getAllDoctors(): Observable<Doctor[]> {
+    return this.http
+      .get(`${this.apiUrl}/doctors`)
+      .pipe(map((response: any) => response));
+  }
+
   saveAppointment(appointment: Appointment) {
     return this.http
       .post(`${this.apiUrl}/appointments`, appointment)

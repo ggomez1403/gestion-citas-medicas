@@ -66,6 +66,8 @@ export class SpecialityPageComponent implements OnInit, OnDestroy {
       userId,
       doctorId,
       scheduleItem,
+      specialityId: this.speciality.id,
+      specialityName: this.speciality.name,
       price: 11900,
     };
 
