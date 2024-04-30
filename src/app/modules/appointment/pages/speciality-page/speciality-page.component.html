@@ -1,0 +1,31 @@
+<section class="container">
+  <h1>agendar cita medica</h1>
+  <h2>seleccionar especialista y horario</h2>
+
+  <div class="info-container">
+    <div class="speciality" *ngIf="speciality">
+      <h3>{{ speciality.name }}</h3>
+      <img src="{{ speciality.image }}" alt="" />
+      <p>{{ speciality.description }}</p>
+    </div>
+    <div class="doctors">
+      <article *ngFor="let doctor of doctors">
+        <h3>{{ doctor.name }}</h3>
+        <ul>
+          <li *ngFor="let item of availability">
+            <ng-container *ngIf="doctor.id === item.doctorId">
+              <button
+                *ngFor="let scheduleItem of item.schedule"
+                class="btn"
+                (click)="saveAppointment(doctor.id, scheduleItem)"
+                routerLink="/appointment/checkout"
+              >
+                {{ scheduleItem.day }} - {{ scheduleItem.time }}
+              </button>
+            </ng-container>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

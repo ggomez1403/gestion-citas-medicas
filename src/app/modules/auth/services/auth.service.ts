@@ -5,6 +5,7 @@ import * as CryptoJS from 'crypto-js';
 import { BehaviorSubject, EMPTY, Observable, map, switchMap, tap } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { User } from '../../../core/models/User.model';
+import { UserJSON } from '../../../core/models/UserJSON.model';
 
 @Injectable({
   providedIn: 'root',
@@ -96,7 +97,7 @@ export class AuthService {
     this.errorLoginSubject.next(false);
   }
 
-  getUser(): User {
+  getUser(): UserJSON {
     const userString = localStorage.getItem(this.SESSION_KEY);
     return userString ? JSON.parse(userString) : null;
   }
