@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Appointment } from '../../../../core/models/Appointment.model';
 import { Doctor } from '../../../../core/models/Doctor.model';
 import { UserJSON } from '../../../../core/models/UserJSON.model';
@@ -21,7 +22,8 @@ export class CheckoutPageComponent {
   constructor(
     private readonly fb: FormBuilder,
     private authService: AuthService,
-    private appointmentService: AppointmentService
+    private appointmentService: AppointmentService,
+    private router: Router
   ) {}
 
   public addressForm!: FormGroup;
@@ -40,11 +42,9 @@ export class CheckoutPageComponent {
   }
 
   checkOut() {
-    this.appointmentService
-      .saveAppointment(this.appointment!)
-      .subscribe((reponse) => {
-        console.log('cita agendada');
-      });
+    this.appointmentService.saveAppointment(this.appointment!).subscribe(() => {
+      this.router.navigate(['/dashboard']);
+    });
   }
 
   getUserInfo() {

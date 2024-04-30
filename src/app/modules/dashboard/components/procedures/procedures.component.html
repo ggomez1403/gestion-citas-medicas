@@ -1,0 +1,16 @@
+<section class="container">
+  <h2>Procedimientos médicos disponibles para la cita</h2>
+  <div *ngIf="procedures.length > 0">
+    <ul class="procedures">
+      <li class="procedure" *ngFor="let procedure of procedures">
+        <p class="title">{{ procedure.name }}</p>
+        <p>
+          Descripcion: <span>{{ procedure.description }}</span>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="procedures.length === 0">
+    <p>No hay procedimientos médicos disponibles para mostrar.</p>
+  </div>
+</section>

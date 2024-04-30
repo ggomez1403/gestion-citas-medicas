@@ -1,0 +1,24 @@
+<section class="container">
+  <h2>Citas agendadas</h2>
+  <div class="appointments">
+    <ng-container *ngFor="let item of appointments">
+      <article class="appointment">
+        <p>
+          Doctor: <span>{{ getDoctorName(item.doctorId) }}</span>
+        </p>
+        <p>
+          Especialidad: <span>{{ item.specialityName }}</span>
+        </p>
+        <p>
+          Dia: <span>{{ item.scheduleItem.day }}</span>
+        </p>
+        <p>
+          Hora: <span>{{ item.scheduleItem.time }}</span>
+        </p>
+        <p>
+          Precio: <span>{{ item.price | currency : "USD" }}</span>
+        </p>
+      </article>
+    </ng-container>
+  </div>
+</section>
