@@ -21,4 +21,7 @@
       </article>
     </ng-container>
   </div>
+  <div *ngIf="appointments.length === 0">
+    <p>No hay citas agendadas</p>
+  </div>
 </section>
